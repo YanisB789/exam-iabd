@@ -1,5 +1,6 @@
 import exo.Partie1;
 import exo.Partie2;
+import exo.Partie3;
 import factory.TripFactory;
 import models.Trip;
 
@@ -43,6 +44,12 @@ void main() {
     partie2.avgDurationByCity(trips).forEach((city, avg) ->
         System.out.println(city + " : " + avg));
 
+    Partie3 partie3 = new Partie3();
 
+    System.out.println("=== top10ExpensiveTrips ===");
+    partie3.top10ExpensiveTrips(trips).forEach(System.out::println);
+
+    System.out.println("\n=== bestTrip ===");
+    partie3.bestTrip(trips).ifPresent(System.out::println);
 }
 
