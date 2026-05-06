@@ -1,4 +1,5 @@
 import exo.Partie1;
+import exo.Partie2;
 import factory.TripFactory;
 import models.Trip;
 
@@ -27,4 +28,21 @@ void main() {
 
     System.out.println("\n=== Tous les trips générés ===");
     trips.forEach(System.out::println);
+
+    Partie2 partie2 = new Partie2();
+
+    System.out.println("=== countByCity ===");
+    partie2.countByCity(trips).forEach((city, count) ->
+        System.out.println(city + " : " + count));
+
+    System.out.println("\n=== revenueByDriver ===");
+    partie2.revenueByDriver(trips).forEach((driver, revenue) ->
+        System.out.println(driver + " : " + revenue));
+
+    System.out.println("\n=== avgDurationByCity ===");
+    partie2.avgDurationByCity(trips).forEach((city, avg) ->
+        System.out.println(city + " : " + avg));
+
+
 }
+
