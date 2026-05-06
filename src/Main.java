@@ -1,6 +1,7 @@
 import exo.Partie1;
 import exo.Partie2;
 import exo.Partie3;
+import exo.Partie4;
 import factory.TripFactory;
 import models.Trip;
 
@@ -51,5 +52,20 @@ void main() {
 
     System.out.println("\n=== bestTrip ===");
     partie3.bestTrip(trips).ifPresent(System.out::println);
+
+    Partie4 partie4 = new Partie4();
+
+    System.out.println("=== totalRevenueSequential ===");
+    System.out.println(partie4.totalRevenueSequential(trips));
+
+    System.out.println("\n=== totalRevenueParallel ===");
+    System.out.println(partie4.totalRevenueParallel(trips));
+
+    System.out.println("\n=== countByCityParallel ===");
+    partie4.countByCityParallel(trips).forEach((city, count) ->
+        System.out.println(city + " : " + count));
+
+    System.out.println("\n=== premiumTripsParallel ===");
+    partie4.premiumTripsParallel(trips).forEach(System.out::println);
 }
 
